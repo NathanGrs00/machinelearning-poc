@@ -1,17 +1,14 @@
 import eel
 import requests
+from web.ml_model import predict_value
 
 eel.init('web')
 
-url = "https://dataderden.cbs.nl/ODataApi/odata/47013NED/TypedDataSet?$top=5"
-
+url = "https://opendata.cbs.nl/ODataApi/odata/83021NED/UntypedDataSet"
 response = requests.get(url)
 
-print(response.json())
-
-@eel.expose
-def get_number():
-    return "test number"
+result = predict_value(6)
+print("Prediction:", result)
 
 eel.start('index.html')
 
