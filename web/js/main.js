@@ -1,10 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("button-name").addEventListener("click", async () => {
-        const result = await eel.get_number()();
-        prompt_alerts(result);
-    });
+document.getElementById("btn-search").addEventListener("click", () => {
+    const inputValue = document.getElementById("input-place").value;
+    document.getElementById("result-place").textContent = inputValue;
+});
 
-    function prompt_alerts(desc){
-        alert(desc);
-    }
+document.getElementById("input-place").addEventListener("change", () => {
+    const inputValue = document.getElementById("input-place").value;
+    document.getElementById("result-place").textContent = inputValue;
 });
